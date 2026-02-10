@@ -78,14 +78,15 @@ function AppShell({ Component, pageProps }: AppProps) {
 
       <footer className="border-t border-amber-500/30 bg-slate-950/90 py-4 text-xs text-amber-100/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 sm:flex-row">
+          
+          <p className="text-[0.7rem] text-amber-200/90">
+            {isArabic
+              ? ".يضاف 12% خدمة"
+              : "12% service fee is added."}
+          </p>
           <p>
             &copy; {new Date().getFullYear()} Talinda Restaurant.{" "}
             {isArabic ? "نتمنى لكم رمضاناً مباركاً." : "Wishing you a blessed Ramadan."}
-          </p>
-          <p className="text-[0.7rem] text-amber-200/90">
-            {isArabic
-              ? "أجواء رمضانية دافئة مع قائمة إفطار وسحور مختارة."
-              : "Warm Ramadan nights with a curated Iftar & Suhoor menu."}
           </p>
         </div>
       </footer>
