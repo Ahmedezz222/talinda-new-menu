@@ -1,5 +1,39 @@
 import type { Language } from "./LanguageContext";
 
+const imageFiles = [
+  "1.JPG", "2.JPG", "3.JPG", "4.JPG", "5.JPG", "6.JPG", "adds.jpg", "appetizers.jpg", "Breakfast.jpeg", "C.JPG", "COCKTIL.jpg", "COFFEE.jpg", "FRAPPE.jpg", "FRESH JUICE.jpg", "HOT_DRINKS.jpg", "kids_meals.jpg", "main_courses.jpg", "MILK CHECK.jpg", "SHISHA.jpg", "sides_food.jpg", "SMOOTHIE.jpg", "SOFT DRINKS.jpg", "SWEET.jpg", "tajines.jpg", "trays.jpg", "tti.jpg", "url.jpg", "أسكالوب بانية.jpg", "ارز.jpg", "اسبريسو.jpg", "اعشاب.jpg", "البيتزا.jpg", "السندوتشات.jpg", "الشوربة.jpg", "الفريدو.jpg", "ام علي.jpg", "ايس شوكلت.jpg", "ايس لاتيه.jpg", "ايسكريم.jpg", "بامية.jpg", "برتقال.jpg", "برجر سادة.jpg", "بريل.jpg", "بطيخ.jpg", "بلو كرواسو.jpg", "بولونيز.jpg", "بوم فريت.jpg", "بيبسي .jpg", "بيتزا بسطرمة.jpg", "بيتزا تونة.jpg", "بيتزا جمبري.jpg", "بيتزا خضروات.jpg", "بيتزا سجق.jpg", "بيتزا سوبرسوبريم.jpg", "بيتزا فراخ.jpg", "بيتزا لحمة.jpg", "بيتزا مارجريتا.jpg", "بيتزا مكس جبن.jpg", "تشيز كيك.jpg", "جوافة.jpg", "حلو مشكل.jpg", "خضار مشكل.jpg", "ريد بول.jpg", "سحلب فواكة.jpg", "سحلب مكسرات.jpg", "سحلب.jpg", "سلطة بابا غنوج.jpg", "سلطة خضرا.jpg", "سلطة طحينة.jpg", "سلطة.jpg", "سمبوسة جبنة.jpg", "سمبوسة لحمة.jpg", "سموزي اناناس.jpg", "سموزي برتقا.jpg", "سموزي توت ازرق.jpg", "سموزي فراولة.jpg", "سموزي كيوي.jpg", "سموزي ليمون نعناع.jpg", "سموزي مانجا باشون.jpg", "سموزي مانجا.jpg", "سموزي ميكستوت.jpg", "سي فوود.jpg", "شاورما لحم او فراخ.jpg", "شاي اخضر.jpg", "شاي.jpg", "شوربة اليوم.jpg", "شوربة خضار.jpg", "شوربة سي فود.jpg", "شوربة عدس.jpg", "شوربة كريمة فراخ.jpg", "شوربة كريمة.jpg", "شوربة لسان عصفور.jpg", "شويبس.jpg", "شيش طاووق.jpg", "شيشة .jpg", "صن شاين.jpg", "صوص.jpg", "طبق فواكة كبير.jpg", "طرشي بلدي.jpg", "فالت وايت.jpg", "فاهيتا لحم او فراخ.jpg", "فرابية شوكوالتة.png", "فرابية فانيليا.jpg", "فرابية كراميل.jpg", "فرابية لوتس.jpg", "فراخ بانية (1).jpg", "فراخ بانية ك.jpg", "فراخ بانية.jpg", "فراخ مشوي.jpg", "فراولة.jpg", "فروت سالط.jpg", "فواكة.jpg", "فيروز.jpg", "قهوة بندق.jpg", "قهوة تركي.jpg", "قهوة فرنساوي.jpg", "كابتشينو.jpg", "كبده اسكندراني.jpg", "كريم كراميل.jpg", "كفتة مشوية ك.jpg", "كفتة مشوية.jpg", "كنافة لوتس بيساتشيو.jpg", "كنافة مانجا نوتيا.jpg", "كورتادو.jpg", "كوكتيل اعشاب.jpg", "كولو سلو.jpg", "كيوي.jpg", "لاتية.jpg", "لبن.jpg", "لمون نعناع.jpg", "لي طبي.jpg", "مانجا.jpg", "مسقعة .jpg", "مشروب-رمضاني.jpg", "معسل.jpg", "مقبالت مشكل.jpg", "مكرونات.jpg", "مكرونة فرن.jpg", "ملوخية.jpg", "ممبار.jpg", "موخيتو اناناس.jpg", "موخيتو باشون.jpg", "موخيتو.jpg", "موكا.jpg", "مولتن كيك.jpg", "مياة صغيرة.jpg", "ميكاتو.jpg", "ميكس جريل.jpg", "ميلك شيك اسنكيرس.jpg", "ميلك شيك اوريو.jpg", "ميلك شيك شوكولاتة.jpg", "ميلك شيك فانيليا.jpg", "ميلك شيك فراولة.jpg", "ميلك شيك كيت كات.jpg", "ميلك شيك لوتس.jpg", "ميلك شيك مارس.jpeg", "ميلك شيك مانجا.jpg", "ميني ميكس.jpg", "نجرسكو .jpg", "نسكافية.jpg", "هوت دوج.jpg", "هوت سيدر.jpg", "هوت شوكليت.jpg", "ورق عنب.jpg"
+];
+
+function normalizeName(name: string): string {
+  return name.replace(/[^a-zA-Z0-9\s\u0600-\u06FF]/g, '').replace(/\s+/g, '_').toLowerCase();
+}
+
+function getImagePath(nameEn: string, nameAr: string): string {
+  const normalizedNameEn = normalizeName(nameEn);
+  const normalizedNameAr = normalizeName(nameAr);
+
+  for (const file of imageFiles) {
+    const fileNameWithoutExtension = file.split('.').slice(0, -1).join('.');
+    const normalizedFile = normalizeName(fileNameWithoutExtension);
+
+    if (normalizedFile === normalizedNameEn) {
+      return `/images/${file}`;
+    }
+    if (normalizedFile === normalizedNameAr) {
+      return `/images/${file}`;
+    }
+
+    // Attempt to match parts of the name (English or Arabic) with parts of the file name
+    if (normalizedNameEn.split('_').some(part => part.length > 2 && normalizedFile.includes(part))) {
+        return `/images/${file}`;
+    }
+    if (normalizedNameAr.split('_').some(part => part.length > 2 && normalizedFile.includes(part))) {
+        return `/images/${file}`;
+    }
+  }
+  return "/talinda.png"; // Default image if no match is found
+}
+
 export interface MenuItem {
   id: number;
   name: string;
@@ -14,12 +48,12 @@ export interface MenuCategory {
   items: MenuItem[];
 }
 
-const img = (alt: string) => ({ src: "/talinda.png", alt });
+const img = (alt: string, nameEn: string, nameAr: string) => ({ src: getImagePath(nameEn, nameAr), alt });
 
 function item(id: number, nameEn: string, nameAr: string, price: string, descEn = "", descAr = ""): { en: MenuItem; ar: MenuItem } {
   return {
-    en: { id, name: nameEn, description: descEn, price, image: img(nameEn) },
-    ar: { id, name: nameAr, description: descAr, price, image: img(nameAr) },
+    en: { id, name: nameEn, description: descEn, price, image: img(nameEn, nameEn, nameAr) },
+    ar: { id, name: nameAr, description: descAr, price, image: img(nameAr, nameEn, nameAr) },
   };
 }
 
