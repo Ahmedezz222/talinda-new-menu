@@ -81,7 +81,7 @@ const allCategories = [
       "Mix Grill Special",
       "میکس جريل أسبشيال",
       "700",
-      "Quarter boneless chicken - 2 Kofta - 2 Kabab - Veal chop. All main dishes are served with rice, potatoes, sautéed vegetables, a Ramadan drink of your choice, and small water.",
+      "Quarter boneless chicken - 2 Kofta - 2 Kabab - Veal chop. All main dishes are served with rice - potatoes - sautéed vegetables - Ramadan drink of your choice - small water",
       "فراخ بدون عظم - 2 كفتة - 2 كباب - كشمير صويا. تقدم جميع الاطباق الرئيسية مع أرز - بطاطس - خضار سوتية - مشروب رمضاني من أختيارك - مياة صغيرة",
     ),
     item(
@@ -89,7 +89,7 @@ const allCategories = [
       "Mix Grill",
       "میکس جریل",
       "450",
-      "2 Kofta - 2 Kabab - 2 Shish Tawook. All main dishes are served with rice, potatoes, sautéed vegetables, a Ramadan drink of your choice, and small water.",
+      "2 Kofta - 2 Kabab - 2 Shish Tawook. All main dishes are served with rice - potatoes - sautéed vegetables - Ramadan drink of your choice - small water",
       "2 كفتة - 2 كباب - 2 فراخ مشوية. تقدم جميع الاطباق الرئيسية مع أرز - بطاطس - خضار سوتية - مشروب رمضاني من أختيارك - مياة صغيرة",
     ),
     item(
@@ -97,7 +97,7 @@ const allCategories = [
       "Moza Fatah",
       "موزة بالفتة",
       "575",
-      "Moza piece - Fatah. All main dishes are served with rice, potatoes, sautéed vegetables, a Ramadan drink of your choice, and small water.",
+      "Moza piece - Fatah. All main dishes are served with rice - potatoes - sautéed vegetables - Ramadan drink of your choice - small water",
       "قطعة موزة - فتة. تقدم جميع الاطباق الرئيسية مع أرز - بطاطس - خضار سوتية - مشروب رمضاني من أختيارك - مياة صغيرة",
     ),
     item(
@@ -105,7 +105,7 @@ const allCategories = [
       "Escalope Panne",
       "أسكالوب بانية",
       "400",
-      "2 pieces Escalope. All main dishes are served with rice, potatoes, sautéed vegetables, a Ramadan drink of your choice, and small water.",
+      "2 pieces Escalope. All main dishes are served with rice - potatoes - sautéed vegetables - Ramadan drink of your choice - small water",
       "2 قطعة أسكالوب. تقدم جميع الاطباق الرئيسية مع أرز - بطاطس - خضار سوتية - مشروب رمضاني من أختيارك - مياة صغيرة",
     ),
     item(
@@ -113,7 +113,7 @@ const allCategories = [
       "Mushroom Picata",
       "بيكاتا بالمشروم",
       "425",
-      "2 pieces Picata. All main dishes are served with rice, potatoes, sautéed vegetables, a Ramadan drink of your choice, and small water.",
+      "2 pieces Picata. All main dishes are served with rice - potatoes - sautéed vegetables - Ramadan drink of your choice - small water",
       "2 قطعة بيكاتا. تقدم جميع الاطباق الرئيسية مع أرز - بطاطس - خضار سوتية - مشروب رمضاني من أختيارك - مياة صغيرة",
     ),
     item(
@@ -121,7 +121,7 @@ const allCategories = [
       "Chicken Cordon Bleu",
       "تشکن کوردن بلو",
       "400",
-      "Chicken Cordon Bleu. All main dishes are served with rice, potatoes, sautéed vegetables, a Ramadan drink of your choice, and small water.",
+      "Chicken Cordon Bleu. All main dishes are served with rice - potatoes - sautéed vegetables - Ramadan drink of your choice - small water",
       "فراخ كوردون بلو. تقدم جميع الاطباق الرئيسية مع أرز - بطاطس - خضار سوتية - مشروب رمضاني من أختيارك - مياة صغيرة",
     ),
     item(
@@ -129,7 +129,7 @@ const allCategories = [
       "Chicken White Sauce",
       "تشكن وايت صوص",
       "400",
-      "Chicken White Sauce. All main dishes are served with rice, potatoes, sautéed vegetables, a Ramadan drink of your choice, and small water.",
+      "Chicken White Sauce. All main dishes are served with rice - potatoes - sautéed vegetables - Ramadan drink of your choice - small water",
       "فراخ وايت صوص. تقدم جميع الاطباق الرئيسية مع أرز - بطاطس - خضار سوتية - مشروب رمضاني من أختيارك - مياة صغيرة",
     ),
     item(
@@ -137,7 +137,7 @@ const allCategories = [
       "Chicken Panne",
       "فراخ بانية",
       "300",
-      "2 Kofta - 2 Panne. All main dishes are served with rice, potatoes, sautéed vegetables, a Ramadan drink of your choice, and small water.",
+      "2 Kofta - 2 Panne. All main dishes are served with rice - potatoes - sautéed vegetables - Ramadan drink of your choice - small water",
       "2 كفتة - 2 فراخ بانية. تقدم جميع الاطباق الرئيسية مع أرز - بطاطس - خضار سوتية - مشروب رمضاني من أختيارك - مياة صغيرة",
     ),
     item(
@@ -145,7 +145,7 @@ const allCategories = [
       "Hamam Mahshi",
       "حمام محشي",
       "350",
-      "1 Stuffed Pigeon with Rice. All main dishes are served with rice, potatoes, sautéed vegetables, a Ramadan drink of your choice, and small water.",
+      "1 Stuffed Pigeon with Rice. All main dishes are served with rice - potatoes - sautéed vegetables - Ramadan drink of your choice - small water",
       "1 عصفور محشي بالأرز. تقدم جميع الاطباق الرئيسية مع أرز - بطاطس - خضار سوتية - مشروب رمضاني من أختيارك - مياة صغيرة",
     ),
     item(
@@ -153,7 +153,7 @@ const allCategories = [
       "Grilled Chicken",
       "فراخ مشوية",
       "300",
-      "Half Grilled Chicken. All main dishes are served with rice, potatoes, sautéed vegetables, a Ramadan drink of your choice, and small water.",
+      "Half Grilled Chicken. All main dishes are served with rice - potatoes - sautéed vegetables - Ramadan drink of your choice - small water",
       "فراخ مشوية نصفية. تقدم جميع الاطباق الرئيسية مع أرز - بطاطس - خضار سوتية - مشروب رمضاني من أختيارك - مياة صغيرة",
     ),
     item(
@@ -161,7 +161,7 @@ const allCategories = [
       "Kabab And Kofta",
       "كباب وكفتة",
       "400",
-      "Kabab And Kofta. All main dishes are served with rice, potatoes, sautéed vegetables, a Ramadan drink of your choice, and small water.",
+      "Kabab And Kofta. All main dishes are served with rice - potatoes - sautéed vegetables - Ramadan drink of your choice - small water",
       "كباب وكفتة. تقدم جميع الاطباق الرئيسية مع أرز - بطاطس - خضار سوتية - مشروب رمضاني من أختيارك - مياة صغيرة",
     ),
   ]),
