@@ -279,6 +279,13 @@ const allCategories = [
     item(nextId(), "Helw Sharqi", "طبق حلو شرقي", "220"),
   ]),
 
+  toCategory(nextId(), "shisha", "شيشة", [
+    item(nextId(), "MASEL", "معسل", "35", ),
+    item(nextId(), "SPICHEAL", "سبيشال", "135",),
+    item(nextId(), "LAI", "لاي", "25",),
+    ]),
+
+
   // Extra
   toCategory(nextId(), "Extra", "إضافات", [
     item(nextId(), "Ice Cream", "بولة أيس كريم", "35"),
