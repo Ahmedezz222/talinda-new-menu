@@ -1,7 +1,7 @@
 import type { Language } from "./LanguageContext";
 
 const imageFiles = [
-  "", ""
+  "1.JPG", "2.JPG", "3.JPG", "4.JPG", "5.JPG", "6.JPG", "adds.jpg", "appetizers.jpg", "Breakfast.jpeg", "C.JPG", "COCKTIL.jpg", "COFFEE.jpg", "FRAPPE.jpg", "FRESH JUICE.jpg", "HOT_DRINKS.jpg", "kids_meals.jpg", "main_courses.jpg", "MILK CHECK.jpg", "SHISHA.jpg", "sides_food.jpg", "SMOOTHIE.jpg", "SOFT DRINKS.jpg", "SWEET.jpg", "tajines.jpg", "trays.jpg", "tti.jpg", "url.jpg", "أسكالوب بانية.jpg", "ارز.jpg", "اسبريسو.jpg", "اعشاب.jpg", "البيتزا.jpg", "السندوتشات.jpg", "الشوربة.jpg", "الفريدو.jpg", "ام علي.jpg", "ايس شوكلت.jpg", "ايس لاتيه.jpg", "ايسكريم.jpg", "بامية.jpg", "برتقال.jpg", "برجر سادة.jpg", "بريل.jpg", "بطيخ.jpg", "بلو كرواسو.jpg", "بولونيز.jpg", "بوم فريت.jpg", "بيبسي .jpg", "بيتزا بسطرمة.jpg", "بيتزا تونة.jpg", "بيتزا جمبري.jpg", "بيتزا خضروات.jpg", "بيتزا سجق.jpg", "بيتزا سوبرسوبريم.jpg", "بيتزا فراخ.jpg", "بيتزا لحمة.jpg", "بيتزا مارجريتا.jpg", "بيتزا مكس جبن.jpg", "تشيز كيك.jpg", "جوافة.jpg", "حلو مشكل.jpg", "خضار مشكل.jpg", "ريد بول.jpg", "سحلب فواكة.jpg", "سحلب مكسرات.jpg", "سحلب.jpg", "سلطة بابا غنوج.jpg", "سلطة خضرا.jpg", "سلطة طحينة.jpg", "سلطة.jpg", "سمبوسة جبنة.jpg", "سمبوسة لحمة.jpg", "سموزي اناناس.jpg", "سموزي برتقا.jpg", "سموزي توت ازرق.jpg", "سموزي فراولة.jpg", "سموزي كيوي.jpg", "سموزي ليمون نعناع.jpg", "سموزي مانجا باشون.jpg", "سموزي مانجا.jpg", "سموزي ميكستوت.jpg", "سي فوود.jpg", "شاورما لحم او فراخ.jpg", "شاي اخضر.jpg", "شاي.jpg", "شوربة اليوم.jpg", "شوربة خضار.jpg", "شوربة سي فود.jpg", "شوربة عدس.jpg", "شوربة كريمة فراخ.jpg", "شوربة كريمة.jpg", "شوربة لسان عصفور.jpg", "شويبس.jpg", "شيش طاووق.jpg", "شيشة .jpg", "صن شاين.jpg", "صوص.jpg", "طبق فواكة كبير.jpg", "طرشي بلدي.jpg", "فالت وايت.jpg", "فاهيتا لحم او فراخ.jpg", "فرابية شوكوالتة.png", "فرابية فانيليا.jpg", "فرابية كراميل.jpg", "فرابية لوتس.jpg", "فراخ بانية (1).jpg", "فراخ بانية ك.jpg", "فراخ بانية.jpg", "فراخ مشوي.jpg", "فراولة.jpg", "فروت سالط.jpg", "فواكة.jpg", "فيروز.jpg", "قهوة بندق.jpg", "قهوة تركي.jpg", "قهوة فرنساوي.jpg", "كابتشينو.jpg", "كبده اسكندراني.jpg", "كريم كراميل.jpg", "كفتة مشوية ك.jpg", "كفتة مشوية.jpg", "كنافة لوتس بيساتشيو.jpg", "كنافة مانجا نوتيا.jpg", "كورتادو.jpg", "كوكتيل اعشاب.jpg", "كولو سلو.jpg", "كيوي.jpg", "لاتية.jpg", "لبن.jpg", "لمون نعناع.jpg", "لي طبي.jpg", "مانجا.jpg", "مسقعة .jpg", "مشروب-رمضاني.jpg", "معسل.jpg", "مقبالت مشكل.jpg", "مكرونات.jpg", "مكرونة فرن.jpg", "ملوخية.jpg", "ممبار.jpg", "موخيتو اناناس.jpg", "موخيتو باشون.jpg", "موخيتو.jpg", "موكا.jpg", "مولتن كيك.jpg", "مياة صغيرة.jpg", "ميكاتو.jpg", "ميكس جريل.jpg", "ميلك شيك اسنكيرس.jpg", "ميلك شيك اوريو.jpg", "ميلك شيك شوكولاتة.jpg", "ميلك شيك فانيليا.jpg", "ميلك شيك فراولة.jpg", "ميلك شيك كيت كات.jpg", "ميلك شيك لوتس.jpg", "ميلك شيك مارس.jpeg", "ميلك شيك مانجا.jpg", "ميني ميكس.jpg", "نجرسكو .jpg", "نسكافية.jpg", "هوت دوج.jpg", "هوت سيدر.jpg", "هوت شوكليت.jpg", "ورق عنب.jpg"
 ];
 
 function normalizeName(name: string): string {
@@ -51,166 +51,17 @@ export interface MenuCategory {
 const img = (alt: string, nameEn: string, nameAr: string) => ({ src: getImagePath(nameEn, nameAr), alt });
 
 function item(id: number, nameEn: string, nameAr: string, price: string, descEn = "", descAr = ""): { en: MenuItem; ar: MenuItem } {
+  const trimmed = price.trim();
+  const displayPrice = trimmed ? (trimmed.includes("LE") ? trimmed : `${trimmed} LE`) : "";
   return {
-    en: { id, name: nameEn, description: descEn, price, image: img(nameEn, nameEn, nameAr) },
-    ar: { id, name: nameAr, description: descAr, price, image: img(nameAr, nameEn, nameAr) },
+    en: { id, name: nameEn, description: descEn, price: displayPrice, image: img(nameEn, nameEn, nameAr) },
+    ar: { id, name: nameAr, description: descAr, price: displayPrice, image: img(nameAr, nameEn, nameAr) },
   };
 }
 
 // Build items: item(globalId, nameEn, nameAr, price, descEn?, descAr?)
 let id = 0;
 const nextId = () => ++id;
-
-const mainCourses = [
-  item(nextId(), "Mix Grill", "ميكس جريل", "450 LE", "2 Kebabs, 2 Kofta, 2  Shish ", "كباب 2 - كفتة 2 - 2 شيش"),
-  item(nextId(), "Mini Mix Grill", "ميني ميكس جريل ", "350 LE", "3 Kebabs, 3 Kofta ", "باب 3 - كفتة 3"),
-  item(nextId(), "mix grill special", "ميكس جريل خصص", "500 LE", " 1/4 roasted chicken , 2 Kofta , 2 Shish , kabida ", "ربع فرخة مشوية - 2 كفتة - 2 كباب - كبدة "),
-  item(nextId(), "grilled chichen ", "فرخة مشوية", "300 LE", "1/2 chichen ", "نص فرخة مشوية"),
-  item(nextId(), "grilled kofta ", "كفتة مشوية", "270 LE", " 4 Kofta ", "4 كفتة"),
-  item(nextId(), "chichen panee ", "فراخ بنية", "270 LE", "Panee piece 2 ", "قطعة بانية 2"),
-];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const hotDrinks = [
-  item(nextId(), "Tea", "شاي", "25 LE"),
-  item(nextId(), "Green Tea", "شاي اخضر", "30 LE"),
-  item(nextId(), "Herbal Tea", "اعشاب", "30 LE", "Mint, Anise, Hibiscus", "نعناع - ينسون - كركدية"),
-  item(nextId(), "Herbal Cocktail", "كوكتيل اعشاب", "40 LE"),
-  item(nextId(), "Hot Cider", "هوت سيدر", "45 LE"),
-  item(nextId(), "Hot Chocolate", "هوت شوكليت", "70 LE"),
-  item(nextId(), "Salep", "سحلب", "45 LE"),
-  item(nextId(), "Salep with Nuts", "سحلب مكسرات", "65 LE"),
-  item(nextId(), "Salep with Fruits", "سحلب فواكة", "65 LE"),
-  item(nextId(), "Nescafé", "نسكافية", "60 LE"),
-];
-
-const softDrinks = [
-  item(nextId(), "Soda", "صودا", "35 LE", "Pepsi, Mirinda, 7Up", "بيبسي - ميرندا - سفن"),
-  item(nextId(), "Fayrouz", "فيروز", "40 LE"),
-  item(nextId(), "Bottle Water", "بريل", "40 LE"),
-  item(nextId(), "Schweppes", "شويبس", "40 LE"),
-  item(nextId(), "Red Bull", "ريد بول", "70 LE", "Coconut, Blueberry, Peach", "جوز هند - بلوبيري - خوخ"),
-  item(nextId(), "Mojito", "موخيتو", "55 LE", "Sprite, Mint, Lemon", "سبرايت - نعناع - لمون"),
-  item(nextId(), "Pineapple Mojito", "موخيتو اناناس", "60 LE"),
-  item(nextId(), "Passion Mojito", "موخيتو باشون", "60 LE"),
-  item(nextId(), "Sunshine", "صن شاين", "55 LE"),
-  item(nextId(), "Blue Crush", "بلو كرواسو", "75 LE"),
-  item(nextId(), "Small Water", "مياة صغيرة", "15 LE"),
-  item(nextId(), "Large Water", "مياة كبيرة", "20 LE"),
-];
-
-const coffee = [
-  item(nextId(), "Turkish Coffee", "قهوة تركي", "40 - 50 LE"),
-  item(nextId(), "French Coffee", "قهوة فرنساوي", "55 LE"),
-  item(nextId(), "Espresso", "اسبريسو", "50 - 65 LE"),
-  item(nextId(), "Macchiato", "ميكاتو", "40 - 50 LE"),
-  item(nextId(), "Cortado", "كورتادو", "70 LE", "Double espresso, Milk, Foam", "دبل اسبريسو - لبن - فوم"),
-  item(nextId(), "Flat White", "فلات وايت", "65 LE"),
-  item(nextId(), "Cappuccino", "كابتشينو", "55 LE"),
-  item(nextId(), "Latte", "لاتية", "55 LE"),
-  item(nextId(), "Mocha", "موكا", "65 LE"),
-  item(nextId(), "Hazelnut Coffee", "قهوة بندق", "65 LE"),
-];
-
-const freshJuice = [
-  item(nextId(), "Mango", "مانجا", "70 LE"),
-  item(nextId(), "Strawberry", "فراولة", "60 LE"),
-  item(nextId(), "Orange", "برتقال", "60 LE"),
-  item(nextId(), "Guava", "جوافة", "60 LE"),
-  item(nextId(), "Kiwi", "كيوي", "70 LE"),
-  item(nextId(), "Watermelon", "بطيخ", "55 LE"),
-  item(nextId(), "Lemon Mint", "لمون نعناع", "50 LE"),
-  item(nextId(), "Cocktail Juice", "كوكتيل", "80 LE", "Mango, Guava, Strawberry", "مانجا - جوافة - فراولة"),
-  item(nextId(), "Mango Passion", "مانجا باشون", "80 LE"),
-  item(nextId(), "Guava Mint", "جوافة نعناع", "70 LE"),
-  item(nextId(), "Orange Lemon", "برتقال بالليمون", "70 LE"),
-  item(nextId(), "Mango Kiwi", "مانجا كيوي", "85 LE"),
-  item(nextId(), "Mango Peach", "مانجا خوخ", "85 LE"),
-  item(nextId(), "Pineapple with Milk", "اناناس باللبن", "85 LE"),
-  item(nextId(), "Piña Colada", "بنا كولادا", "75 LE", "Coconut, Pineapple, Milk", "جوز هند - اناناس - لبن"),
-  item(nextId(), "Banana with Milk", "موز باللبن", "65 LE"),
-  item(nextId(), "Guava with Milk", "جوافة باللبن", "70 LE"),
-  item(nextId(), "Mango Passion Peach", "مانجو باشون خوخ", "95 LE"),
-];
-
-const smoothie = [
-  item(nextId(), "Mango Smoothie", "سموزي مانجا", "80 LE"),
-  item(nextId(), "Strawberry Smoothie", "سموزي فراولة", "70 LE"),
-  item(nextId(), "Orange Smoothie", "سموزي برتقال", "70 LE"),
-  item(nextId(), "Blueberry Smoothie", "سموزي توت ازرق", "70 LE"),
-  item(nextId(), "Mixed Berry Smoothie", "سموزي ميكس توت", "80 LE"),
-  item(nextId(), "Lemon Mint Smoothie", "سموزي ليمون نعناع", "60 LE"),
-  item(nextId(), "Kiwi Smoothie", "سموزي كيوي", "70 LE"),
-  item(nextId(), "Pineapple Smoothie", "سموزي اناناس", "70 LE"),
-  item(nextId(), "Mango Passion Smoothie", "سموزي مانجا باشون", "80 LE"),
-  item(nextId(), "Talinda Smoothie", "تاليندا", "85 LE", "Pineapple, Coconut, Milk", "اناناس - جوز هند - لبن"),
-];
-
-const milkShake = [
-  item(nextId(), "Mars Milk Shake", "ميلك شيك مارس", "80 LE"),
-  item(nextId(), "Kit Kat Milk Shake", "ميلك شيك كيت كات", "90 LE"),
-  item(nextId(), "Oreo Milk Shake", "ميلك شيك اوريو", "85 LE"),
-  item(nextId(), "Lotus Milk Shake", "ميلك شيك لوتس", "95 LE"),
-  item(nextId(), "Snickers Milk Shake", "ميلك شيك اسنكيرس", "95 LE"),
-  item(nextId(), "Strawberry Milk Shake", "ميلك شيك فراولة", "85 LE"),
-  item(nextId(), "Mango Milk Shake", "ميلك شيك مانجا", "90 LE"),
-  item(nextId(), "Chocolate Milk Shake", "ميلك شيك شوكولاتة", "85 LE"),
-  item(nextId(), "Vanilla Milk Shake", "ميلك شيك فانيليا", "85 LE"),
-];
-
-const frappe = [
-  item(nextId(), "Vanilla Frappe", "فرابية فانيليا", "70 LE"),
-  item(nextId(), "Chocolate Frappe", "فرابية شوكولاتة", "80 LE"),
-  item(nextId(), "Lotus Frappe", "فرابية لوتس", "80 LE"),
-  item(nextId(), "Caramel Frappe", "فرابية كراميل", "75 LE"),
-  item(nextId(), "Iced Latte", "ايس لاتيه", "70 LE"),
-  item(nextId(), "Iced Chocolate", "ايس شوكلت", "80 LE"),
-  item(nextId(), "Ice Cream", "ايس كريم", "60 LE"),
-];
-
-const sweet = [
-  item(nextId(), "Fruit Salad", "فروت سالط", "75 LE"),
-  item(nextId(), "Large Fruit Plate", "طبق فواكة كبير", "100 LE"),
-  item(nextId(), "Om Ali", "ام علي", "60 LE"),
-  item(nextId(), "Cheesecake", "تشيز كيك", "70 LE"),
-  item(nextId(), "Molten Cake", "مولتن كيك", "75 LE"),
-  item(nextId(), "Crème Caramel", "كريم كراميل", "50 LE"),
-  item(nextId(), "Sweet Mix", "حلو مشكل", "60 - 100 LE"),
-  item(nextId(), "Knafa Mango Nutella", "كنافة مانجو نوتيلا", "60 LE"),
-  item(nextId(), "Knafa Lotus Pistachio", "كنافة لوتس بيساتشيو", "60 LE"),
-];
-
-const adds = [
-  item(nextId(), "Milk (Add)", "لبن", "20 LE"),
-  item(nextId(), "Nuts (Add)", "مكسرات", "25 LE"),
-  item(nextId(), "Sauce (Add)", "صوص", "15 LE"),
-  item(nextId(), "Fruit (Add)", "فواكة", "20 LE"),
-  item(nextId(), "Ice Cream (Add)", "ايس كريم", "25 LE"),
-];
-
-const shisha = [
-  item(nextId(), "Molasses", "معسل", "35 LE"),
-  item(nextId(), "Special Shisha", "شيشة اسبشيال", "135 LE"),
-  item(nextId(), "Hot Tea", "لي طبي", "15 LE"),
-  item(nextId(), "Iced Tea", "لي ايس", "25 LE"),
-];
 
 function toCategory(id: number, nameEn: string, nameAr: string, items: { en: MenuItem; ar: MenuItem }[]): { en: MenuCategory; ar: MenuCategory } {
   return {
@@ -222,28 +73,222 @@ function toCategory(id: number, nameEn: string, nameAr: string, items: { en: Men
 const categoriesEn: MenuCategory[] = [];
 const categoriesAr: MenuCategory[] = [];
 
-[
-  toCategory(1, "Main Courses", "الأطباق الرئيسية", mainCourses),
+const allCategories = [
+  // Main Course
+  toCategory(nextId(), "Main Course", "وجبة أساسية", [
+    item(nextId(), "Mix Grill Special", "میکس جريل أسبشيال", "700", "Quarter boneless chicken - 2 Kofta - 2 Kabab - Veal chop", "فراخ بدون عظم - 2 كفتة - 2 كباب - كشمير صويا"),
+    item(nextId(), "Mix Grill", "میکس جریل", "450", "2 Kofta - 2 Kabab - 2 Shish Tawook", "2 كفتة - 2 كباب - 2 فراخ مشوية"),
+    item(nextId(), "Moza Fatah", "موزة بالفتة", "575", "Moza piece - Fatah", "قطعة موزة - فتة"),
+    item(nextId(), "Escalope Panne", "أسكالوب بانية", "400", "2 pieces Escalope", "2 قطعة أسكالوب"),
+    item(nextId(), "Mushroom Picata", "بيكاتا بالمشروم", "425", "2 pieces Picata", "2 قطعة بيكاتا"),
+    item(nextId(), "Chicken Cordon Bleu", "تشکن کوردن بلو", "400", "Chicken Cordon Bleu", "فراخ كوردون بلو"),
+    item(nextId(), "Chicken White Sauce", "تشكن وايت صوص", "400", "Chicken White Sauce", "فراخ وايت صوص"),
+    item(nextId(), "Chicken Panne", "فراخ بانية", "300", "2 Kofta - 2 Panne", "2 كفتة - 2 فراخ بانية"),
+    item(nextId(), "Hamam Mahshi", "حمام محشي", "350", "1 Stuffed Pigeon with Rice", "1 عصفور محشي بالأرز"),
+    item(nextId(), "Grilled Chicken", "فراخ مشوية", "300", "Half Grilled Chicken", "فراخ مشوية نصفية"),
+    item(nextId(), "Kabab And Kofta", "كباب وكفتة", "400", "Kabab And Kofta", "كباب وكفتة"),
+  ]),
 
+  // Family Mixes
+  toCategory(nextId(), "GRILLED MEATS", "صواني المشويات", [
+    item(nextId(), "Mix Of Lovers", "مكس الحبايب", "2250", "Grilled Chicken - 1/2kg Tarb - 1kg Kofta - 1/2kg Mombar - Rice", "فراخ مشوية - 1/2 كيلو طرب - 1 كيلو كفتة - 1/2 كيلو ممبار - أرز"),
+    item(nextId(), "Mix The Mix", "مكس المكس", "2000", "1kg Kofta - 1/2kg Tarb - 1.5 Shish Chicken - Rice", "1 كيلو كفتة - 1/2 كيلو طرب - 1.5 فراخ مشوية - أرز"),
+    item(nextId(), "Mix Of Friends", "مكس الاصدقاء", "1900", "Shish Chicken - 1kg Kofta - 1/2kg Tarb - 1/2kg Mombar - Rice", "فراخ مشوية - 1 كيلو كفتة - 1/2 كيلو طرب - 1/2 كيلو ممبار - أرز"),
+    item(nextId(), "Mix Ramadan", "مکس رمضان", "2500"),
+    item(nextId(), "Grilled Meats (Tray)", "صواني المشويات", "3500", "Shish Chicken - 1/2kg Tarb - 1/2kg Mombar - 2 Pigeons - 1/2kg Kofta - Rice", "فراخ مشوية - 1/2 كيلو طرب - 1/2 كيلو ممبار - 2 عصفور - 1/2 كيلو كفتة - أرز"),
+    item(nextId(), "Family Mix", "مكس العيلة", "1600", "Shish Chicken - 4 Stuffed Pigeons - 1/2kg Kofta - 1/2kg Tarb - 1kg Sausage - 1/2kg Mombar - Rice", "فراخ مشوية - 4 عصفور محشي - 1/2 كيلو كفتة - 1/2 كيلو طرب - 1 كيلو ساساج - 1/2 كيلو ممبار - أرز"),
+    item(nextId(), "Lama Mix", "مكس اللمة", "", "Grilled Chicken - 1/2kg Kofta - 1/2kg Tarb - 1kg Mombar - Rice (Price not listed)", "فراخ مشوية - 1/2 كيلو كفتة - 1/2 كيلو طرب - 1 كيلو ممبار - أرز (السعر غير مدرج)"),
+  ]),
 
+  // Appetizers
+  toCategory(nextId(), "Appetizers", "مقبلات", [
+    item(nextId(), "Mombar", "ممبار", "80", "5 pieces"),
+    item(nextId(), "Warq Enab", "ورق عنب", "60", "10 pieces"),
+    item(nextId(), "Sambosk Meat", "سمبوسك لحم", "70", "4 pieces"),
+    item(nextId(), "Sambosk Cheese", "سمبوسك جبنة", "60", "4 pieces"),
+  ]),
 
+  // Pasta
+  toCategory(nextId(), "Pasta", "مكرونة", [
+    item(nextId(), "Oven Pasta", "مكرونة فرن", "90"),
+    item(nextId(), "Nigresco", "نجرسكو", "120"),
+    item(nextId(), "Bolognese", "بولونيز", "150"),
+    item(nextId(), "Alfredo", "الفريدو", "170"),
+  ]),
 
+  // Rice
+  toCategory(nextId(), "Rice", "أرز", [
+    item(nextId(), "White Rice", "أرز ابيض", "50"),
+    item(nextId(), "Mixed Rice", "أرز خلطة", "70"),
+    item(nextId(), "Sayadieh Rice", "أرز صيادية", "55"),
+  ]),
 
+  // Salad
+  toCategory(nextId(), "Salad", "سلطات", [
+    item(nextId(), "Tahina", "طحينة", "40"),
+    item(nextId(), "Tomea", "تومية", "40"),
+    item(nextId(), "Baba Ghanoush", "بابا غنوج", "45"),
+    item(nextId(), "Green Salad", "سلطة خضراء", "35"),
+    item(nextId(), "Coleslaw Salad", "سلطة كلو سلو", "50"),
+    item(nextId(), "Torshi", "طرشي", "35"),
+  ]),
 
+  // Tagine
+  toCategory(nextId(), "Tagine", "طواجن", [
+    item(nextId(), "Okra With Meat", "طاجن بامية باللحمة", "250"),
+    item(nextId(), "Moussaka With Meat", "طاجن مسقعة باللحم المفروم", "175"),
+    item(nextId(), "Moussaka", "طاجن مسقعة سادة", "100", "Plain"),
+    item(nextId(), "Turli With Meat", "طاجن تورلي باللحم", "250"),
+  ]),
 
+  // Soup
+  toCategory(nextId(), "Soup", "شوربة", [
+    item(nextId(), "Vegetable Soup", "شوربة خضار", "50"),
+    item(nextId(), "Orzo Soup", "شوربة لسان عصفور", "50"),
+    item(nextId(), "Cream Of Chicken Soup", "شوربة كريمة بالفراخ", "120"),
+    item(nextId(), "Lentils", "شوربة عدس", "50"),
+    item(nextId(), "Cream Of Mushroom Soup", "شوربة كريمة بالمشروم والفراخ", "150", "With Chicken"),
+  ]),
 
+  // Soft Drink
+  toCategory(nextId(), "Soft Drink", "مشروبات غازية", [
+    item(nextId(), "Water S", "مياة صغيرة", "15"),
+    item(nextId(), "Water L", "مياة كبيرة", "20"),
+    item(nextId(), "Pepsi", "بيبسي", "50"),
+    item(nextId(), "7 Up", "سیفن اب", "50"),
+    item(nextId(), "Fayrouz", "فیروز", "55"),
+    item(nextId(), "Birell", "بريل", "55"),
+    item(nextId(), "Redbull", "ريدبول", "105"),
+  ]),
 
-  toCategory(11, "Hot Drinks", "مشروبات ساخنة", hotDrinks),
-  toCategory(12, "Soft Drinks", "مشروبات غازية", softDrinks),
-  toCategory(13, "Coffee", "قهوة", coffee),
-  toCategory(14, "Fresh Juice", "عصائر طازجة", freshJuice),
-  toCategory(15, "Smoothie", "سموزي", smoothie),
-  toCategory(16, "Milk Shake", "ميلك شيك", milkShake),
-  toCategory(17, "Frappe", "فرابيه", frappe),
-  toCategory(18, "Sweet", "حلويات", sweet),
-  toCategory(19, "Adds", "اضافات", adds),
-  toCategory(20, "Shisha", "شيشة", shisha),
-].forEach((c) => {
+  // Hot Drinks
+  toCategory(nextId(), "Hot Drinks", "مشروبات ساخنة", [
+    item(nextId(), "Tea", "شاي", "45"),
+    item(nextId(), "Green Tea", "شاي اخضر", "45"),
+    item(nextId(), "Herbs", "اعشاب", "45"),
+    item(nextId(), "Hot Chocolate", "هوت شوكلت", "120"),
+    item(nextId(), "Hot Cider", "هوت سیدر", "80"),
+    item(nextId(), "Sahlab", "سحلب", "90"),
+    item(nextId(), "Cocktail Herbs", "کوکتیل اعشاب", "90", "Lemon - Mint - Apple - Ginger - Cinnamon - Honey - Orange"),
+  ]),
+
+  // Hot Coffee
+  toCategory(nextId(), "Hot Coffee", "قهوة ساخنة", [
+    item(nextId(), "Turkish Coffee Single", "قهوة تركي سنجل", "50"),
+    item(nextId(), "Turkish Coffee Double", "قهوة تركي دبل", "75"),
+    item(nextId(), "French Coffee", "قهوة فرنساوي", "85"),
+    item(nextId(), "Hazelnut Coffee", "قهوة بندق", "90"),
+    item(nextId(), "Espresso Single", "أسبريسو سينجل", "65"),
+    item(nextId(), "Espresso Double", "أسبريسو دبل", "85"),
+    item(nextId(), "Macchiato Single", "ميكاتو سينجل", "65"),
+    item(nextId(), "Macchiato Double", "ميكاتو دبل", "85"),
+    item(nextId(), "Cortado", "کورتادو", "100"),
+    item(nextId(), "Flat White", "فلات وایت", "105"),
+    item(nextId(), "Cappuccino Medium", "كابتشينو وسط", "100"),
+    item(nextId(), "Cappuccino Large", "كابتشينو كبير", "120"),
+    item(nextId(), "Latte", "لاتية", "110"),
+    item(nextId(), "Latte Mocha", "لاتية موكا", "120"),
+    item(nextId(), "Latte White Mocha", "لاتية وايت موكا", "130"),
+    item(nextId(), "Spanish Latte", "سبانش لاتية", "130"),
+  ]),
+
+  // Ice Coffee
+  toCategory(nextId(), "Ice Coffee", "قهوة مثلجة", [
+    item(nextId(), "Ice Latte", "أيس لاتية", "50"),
+    item(nextId(), "Ice Mocha", "أيس موكا", "75"),
+    item(nextId(), "Ice White Mocha", "أيس وايت موكا", "85"),
+    item(nextId(), "Ice Spanish Latte", "أيس سبانش لاتية", "90"),
+    item(nextId(), "Ice Pistachio Latte", "أيس بيستاشيو لاتية", "65"),
+    item(nextId(), "Frappe Classic", "فرابية كلاسيك", "65"),
+    item(nextId(), "Mocha Frappe", "موكا فرابية", "85"),
+    item(nextId(), "White Mocha Frappe", "وايت موكا فرابية", "65"),
+    item(nextId(), "Spanish Latte Frappe", "سبانش لاتية فرابية", "85"),
+    item(nextId(), "Pistachio Frappe", "بيستاشيو فرابية", "105"),
+  ]),
+
+  // Mojito
+  toCategory(nextId(), "Mojito", "موخيتو", [
+    item(nextId(), "Mojito Classic", "موخيتو كلاسيك", "70"),
+    item(nextId(), "Mojito Peach", "موخيتو خوخ", "90"),
+    item(nextId(), "Mojito Pineapple", "موخيتو اناناس", "90"),
+    item(nextId(), "Mojito Passion", "موخيتو باشون", "90"),
+    item(nextId(), "Mojito Blueberry", "موخيتو بلوبيري", "90"),
+    item(nextId(), "Mojito Strawberry", "موخيتو فراولة", "90"),
+    item(nextId(), "Mojito Redbull", "موخيتو ريدبول", "120"),
+  ]),
+
+  // Lemonte
+  toCategory(nextId(), "Lemonte", "ليمونيت", [
+    item(nextId(), "Pink Lemonte", "بينك ليمونيت", "90"),
+    item(nextId(), "Strawberry Lemonte", "فراولة ليمونيت", "90"),
+    item(nextId(), "Passion Lemonte", "باشون لیمونیت", "105"),
+    item(nextId(), "Hawaii Lemonte", "هواي ليمونيت", "110"),
+  ]),
+
+  // Fresh Juice
+  toCategory(nextId(), "Fresh Juice", "عصير طازج", [
+    item(nextId(), "Mango", "مانجو", "90"),
+    item(nextId(), "Guava", "جوافة", "90"),
+    item(nextId(), "Strawberry", "فراولة", "90"),
+    item(nextId(), "Orange", "برتقال", "80"),
+    item(nextId(), "Banana With Milk", "موز بالحليب", "100"),
+    item(nextId(), "Guava With Mint", "جوافة بالنعناع", "100"),
+    item(nextId(), "Lemon Mint", "ليمون نعناع", "80"),
+  ]),
+
+  // Smoothies
+  toCategory(nextId(), "Smoothies", "سموزي", [
+    item(nextId(), "Smoothie Mango", "سموزي مانجو", "100"),
+    item(nextId(), "Smoothie Guava", "سموزي جوافة", "100"),
+    item(nextId(), "Smoothie Strawberry", "سموزي فراولة", "100"),
+    item(nextId(), "Smoothie Blueberry", "سموزي بلوبيري", "90"),
+    item(nextId(), "Smoothie Lemon Mint", "سموزي ليمون نعناع", "90"),
+    item(nextId(), "Smoothie Mango Peach", "سموزي خوخ", "130"),
+    item(nextId(), "Smoothie Mango Passion", "سموزي باشون", "135"),
+    item(nextId(), "Smoothie Pinacolada", "سموزي بينا كولادا", "135"),
+  ]),
+
+  // Ice Tea
+  toCategory(nextId(), "Ice Tea", "شاي مثلج", [
+    item(nextId(), "Ice Tea Lemon", "ايس تي ليمون", "80"),
+    item(nextId(), "Ice Tea Passion", "ايس تي باشون", "90"),
+    item(nextId(), "Ice Tea Peach", "ايس تي خوخ", "90"),
+  ]),
+
+  // Milk Shake
+  toCategory(nextId(), "Milk Shake", "ميلك شيك", [
+    item(nextId(), "Milk Shake Vanilla", "ميلك شيك فانيليا", "100"),
+    item(nextId(), "Milk Shake Chocolate", "ميلك شيك شوكولاتة", "100"),
+    item(nextId(), "Milk Shake Strawberry", "ميلك شيك فراولة", "120"),
+    item(nextId(), "Milk Shake Mango", "ميلك شيك مانجو", "130"),
+    item(nextId(), "Milk Shake Passion", "ميلك شيك باشون", "130"),
+    item(nextId(), "Milk Shake Peach", "ميلك شيك خوخ", "130"),
+    item(nextId(), "Milk Shake Oreo", "ميلك شيك اوريو", "130"),
+    item(nextId(), "Milk Shake Pistachio", "ميلك شيك بيستاشيو", "130"),
+  ]),
+
+  // Dessert
+  toCategory(nextId(), "Dessert", "حلويات", [
+    item(nextId(), "Molten Cake Ice Cream", "مولتن كيك بالايس كريم", "110"),
+    item(nextId(), "Cheesecake", "تشيز كيك", "130"),
+    item(nextId(), "Umm Ali", "أم علي", "90"),
+    item(nextId(), "2 Scoop Ice Cream", "أيس كريم 2 بولة", "80"),
+    item(nextId(), "Fruit Plate", "طبق فواكة", "150"),
+    item(nextId(), "Fruit Salad", "فروت سلاط", "120"),
+    item(nextId(), "Mango Nutella Kunafa", "کنافا نوتيلا مانجا", "160"),
+    item(nextId(), "Helw Sharqi", "طبق حلو شرقي", "220"),
+  ]),
+
+  // Extra
+  toCategory(nextId(), "Extra", "إضافات", [
+    item(nextId(), "Ice Cream", "بولة أيس كريم", "35"),
+    item(nextId(), "Nuts", "مكسرات", "50"),
+    item(nextId(), "Topping", "توبينج", "35"),
+    item(nextId(), "Fruits", "فواكهة", "40"),
+  ]),
+];
+
+allCategories.forEach((c) => {
   categoriesEn.push(c.en);
   categoriesAr.push(c.ar);
 });
