@@ -286,7 +286,7 @@ const allCategories = [
     item(nextId(), "Hot Chocolate", "هوت شوكلت", "120"),
     item(nextId(), "Hot Cider", "هوت سیدر", "80"),
     item(nextId(), "Sahlab", "سحلب", "90"),
-    item(nextId(), "Cocktail Herbs", "کوکتیل اعشاب", "90", "Lemon - Mint - Apple - Ginger - Cinnamon - Honey - Orange"),
+    item(nextId(), "Cocktail Herbs", "کوکتیل اعشاب", "90", "Lemon - Mint - Apple - Ginger - Cinnamon - Honey - Orange", "ليمون - نعناع - تفاح - زنجبيل - قرفة - عسل - برتقال"),
   ]),
 
   // Hot Coffee
