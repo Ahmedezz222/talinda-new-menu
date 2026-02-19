@@ -1,7 +1,34 @@
 import type { Language } from "./LanguageContext";
 
 const imageFiles = [
-  "1.JPG", "2.JPG", "3.JPG", "4.JPG", "5.JPG", "6.JPG", "adds.jpg", "appetizers.jpg", "Breakfast.jpeg", "C.JPG", "COCKTIL.jpg", "COFFEE.jpg", "FRAPPE.jpg", "FRESH JUICE.jpg", "HOT_DRINKS.jpg", "kids_meals.jpg", "main_courses.jpg", "MILK CHECK.jpg", "SHISHA.jpg", "sides_food.jpg", "SMOOTHIE.jpg", "SOFT DRINKS.jpg", "SWEET.jpg", "tajines.jpg", "trays.jpg", "tti.jpg", "url.jpg", "أسكالوب بانية.jpg", "ارز.jpg", "اسبريسو.jpg", "اعشاب.jpg", "البيتزا.jpg", "السندوتشات.jpg", "الشوربة.jpg", "الفريدو.jpg", "ام علي.jpg", "ايس شوكلت.jpg", "ايس لاتيه.jpg", "ايسكريم.jpg", "بامية.jpg", "برتقال.jpg", "برجر سادة.jpg", "بريل.jpg", "بطيخ.jpg", "بلو كرواسو.jpg", "بولونيز.jpg", "بوم فريت.jpg", "بيبسي .jpg", "بيتزا بسطرمة.jpg", "بيتزا تونة.jpg", "بيتزا جمبري.jpg", "بيتزا خضروات.jpg", "بيتزا سجق.jpg", "بيتزا سوبرسوبريم.jpg", "بيتزا فراخ.jpg", "بيتزا لحمة.jpg", "بيتزا مارجريتا.jpg", "بيتزا مكس جبن.jpg", "تشيز كيك.jpg", "جوافة.jpg", "حلو مشكل.jpg", "خضار مشكل.jpg", "ريد بول.jpg", "سحلب فواكة.jpg", "سحلب مكسرات.jpg", "سحلب.jpg", "سلطة بابا غنوج.jpg", "سلطة خضرا.jpg", "سلطة طحينة.jpg", "سلطة.jpg", "سمبوسة جبنة.jpg", "سمبوسة لحمة.jpg", "سموزي اناناس.jpg", "سموزي برتقا.jpg", "سموزي توت ازرق.jpg", "سموزي فراولة.jpg", "سموزي كيوي.jpg", "سموزي ليمون نعناع.jpg", "سموزي مانجا باشون.jpg", "سموزي مانجا.jpg", "سموزي ميكستوت.jpg", "سي فوود.jpg", "شاورما لحم او فراخ.jpg", "شاي اخضر.jpg", "شاي.jpg", "شوربة اليوم.jpg", "شوربة خضار.jpg", "شوربة سي فود.jpg", "شوربة عدس.jpg", "شوربة كريمة فراخ.jpg", "شوربة كريمة.jpg", "شوربة لسان عصفور.jpg", "شويبس.jpg", "شيش طاووق.jpg", "شيشة .jpg", "صن شاين.jpg", "صوص.jpg", "طبق فواكة كبير.jpg", "طرشي بلدي.jpg", "فالت وايت.jpg", "فاهيتا لحم او فراخ.jpg", "فرابية شوكوالتة.png", "فرابية فانيليا.jpg", "فرابية كراميل.jpg", "فرابية لوتس.jpg", "فراخ بانية (1).jpg", "فراخ بانية ك.jpg", "فراخ بانية.jpg", "فراخ مشوي.jpg", "فراولة.jpg", "فروت سالط.jpg", "فواكة.jpg", "فيروز.jpg", "قهوة بندق.jpg", "قهوة تركي.jpg", "قهوة فرنساوي.jpg", "كابتشينو.jpg", "كبده اسكندراني.jpg", "كريم كراميل.jpg", "كفتة مشوية ك.jpg", "كفتة مشوية.jpg", "كنافة لوتس بيساتشيو.jpg", "كنافة مانجا نوتيا.jpg", "كورتادو.jpg", "كوكتيل اعشاب.jpg", "كولو سلو.jpg", "كيوي.jpg", "لاتية.jpg", "لبن.jpg", "لمون نعناع.jpg", "لي طبي.jpg", "مانجا.jpg", "مسقعة .jpg", "مشروب-رمضاني.jpg", "معسل.jpg", "مقبالت مشكل.jpg", "مكرونات.jpg", "مكرونة فرن.jpg", "ملوخية.jpg", "ممبار.jpg", "موخيتو اناناس.jpg", "موخيتو باشون.jpg", "موخيتو.jpg", "موكا.jpg", "مولتن كيك.jpg", "مياة صغيرة.jpg", "ميكاتو.jpg", "ميكس جريل.jpg", "ميلك شيك اسنكيرس.jpg", "ميلك شيك اوريو.jpg", "ميلك شيك شوكولاتة.jpg", "ميلك شيك فانيليا.jpg", "ميلك شيك فراولة.jpg", "ميلك شيك كيت كات.jpg", "ميلك شيك لوتس.jpg", "ميلك شيك مارس.jpeg", "ميلك شيك مانجا.jpg", "ميني ميكس.jpg", "نجرسكو .jpg", "نسكافية.jpg", "هوت دوج.jpg", "هوت سيدر.jpg", "هوت شوكليت.jpg", "ورق عنب.jpg"
+  "Alfredo.png",
+  "Bolognese.png",
+  "Chicken Cordon Bleu.png",
+  "Chicken Panne.png",
+  "Chicken White Sauce.png",
+  "Escalope Panne.png",
+  "Fatah Moza.png",
+  "Family Mix.png",
+  "Grilled Chicken.png",
+  "Hamam Mahshi.png",
+  "Kabab And Kofta.png",
+  "Lama Mix.png",
+  "Mixed Rice.png",
+  "Mombar.png",
+  "Mix Grill Special.png",
+  "Mix Grill.png",
+  "Mix Of Friends.png",
+  "Mix Of Lovers.png",
+  "Mix Ramadan.png",
+  "Mix The Mix.png",
+  "Mushroom Picata.jpg",
+  "Nigresco.png",
+  "Oven Pasta.png",
+  "Sambosk Cheese.png",
+  "Sambosk Meat.png",
+  "Sayadieh Rice.png",
+  "Warq Enab.png",
+  "White Rice.png",
 ];
 
 function normalizeName(name: string): string {
@@ -23,12 +50,12 @@ function getImagePath(nameEn: string, nameAr: string): string {
       return `/images/${file}`;
     }
 
-    // Attempt to match parts of the name (English or Arabic) with parts of the file name
-    if (normalizedNameEn.split('_').some(part => part.length > 2 && normalizedFile.includes(part))) {
-        return `/images/${file}`;
+    // Only match when item name contains the full file name (avoids "Mix Grill" matching "Mix Grill Special.png")
+    if (normalizedNameEn.length >= normalizedFile.length && normalizedNameEn.includes(normalizedFile)) {
+      return `/images/${file}`;
     }
-    if (normalizedNameAr.split('_').some(part => part.length > 2 && normalizedFile.includes(part))) {
-        return `/images/${file}`;
+    if (normalizedNameAr.length >= normalizedFile.length && normalizedNameAr.includes(normalizedFile)) {
+      return `/images/${file}`;
     }
   }
   return "/talinda.png"; // Default image if no match is found
@@ -94,7 +121,7 @@ const allCategories = [
     ),
     item(
       nextId(),
-      "Moza Fatah",
+      "Fatah Moza",
       "موزة بالفتة",
       "575",
       "Moza piece - Fatah. All main dishes are served with rice - potatoes - sautéed vegetables - Ramadan drink of your choice - small water",
@@ -171,10 +198,9 @@ const allCategories = [
     item(nextId(), "Mix Of Lovers", "مكس الحبايب", "2250", "Grilled Chicken - 1/2kg Tarb - 1kg Kofta - 1/2kg Mombar - Rice", "فراخ مشوية - 1/2 كيلو طرب - 1 كيلو كفتة - 1/2 كيلو ممبار - أرز"),
     item(nextId(), "Mix The Mix", "مكس المكس", "2000", "1kg Kofta - 1/2kg Tarb - 1.5 Shish Chicken - Rice", "1 كيلو كفتة - 1/2 كيلو طرب - 1.5 فراخ مشوية - أرز"),
     item(nextId(), "Mix Of Friends", "مكس الاصدقاء", "1900", "Shish Chicken - 1kg Kofta - 1/2kg Tarb - 1/2kg Mombar - Rice", "فراخ مشوية - 1 كيلو كفتة - 1/2 كيلو طرب - 1/2 كيلو ممبار - أرز"),
-    item(nextId(), "Mix Ramadan", "مکس رمضان", "2500"),
-    item(nextId(), "Grilled Meats (Tray)", "صواني المشويات", "3500", "Shish Chicken - 1/2kg Tarb - 1/2kg Mombar - 2 Pigeons - 1/2kg Kofta - Rice", "فراخ مشوية - 1/2 كيلو طرب - 1/2 كيلو ممبار - 2 عصفور - 1/2 كيلو كفتة - أرز"),
-    item(nextId(), "Family Mix", "مكس العيلة", "1600", "Shish Chicken - 4 Stuffed Pigeons - 1/2kg Kofta - 1/2kg Tarb - 1kg Sausage - 1/2kg Mombar - Rice", "فراخ مشوية - 4 عصفور محشي - 1/2 كيلو كفتة - 1/2 كيلو طرب - 1 كيلو ساساج - 1/2 كيلو ممبار - أرز"),
-    item(nextId(), "Lama Mix", "مكس اللمة", "", "Grilled Chicken - 1/2kg Kofta - 1/2kg Tarb - 1kg Mombar - Rice (Price not listed)", "فراخ مشوية - 1/2 كيلو كفتة - 1/2 كيلو طرب - 1 كيلو ممبار - أرز (السعر غير مدرج)"),
+    item(nextId(), "Mix Ramadan", "مکس رمضان", "2500","Shish Chicken - 1kg Kofta - 1/2kg Tarb -2 Pieces of Pigeon - 1/2kg Mombar - Rice"," ( فرخة شيش - ½ كيلو طرب مشوي - 1//2 كيلو ممبار - عدد 2 فرد حمام - ½ كيلو كفتة مشوية - أرز )"),
+    item(nextId(), "Family Mix", "مكس العيلة", "3500", "Shish Chicken - 4 Stuffed Pigeons - 1/2kg Kofta - 1/2kg Tarb - 1kg Sausage - 1/2kg Mombar - Rice", "فراخ مشوية - 4 عصفور محشي - 1/2 كيلو كفتة - 1/2 كيلو طرب - 1 كيلو ساساج - 1/2 كيلو ممبار - أرز"),
+    item(nextId(), "Lama Mix", "مكس اللمة", "1600", "Grilled Chicken - 1/2kg Kofta - 1/2kg Tarb - 1kg Mombar - Rice (Price not listed)", "فراخ مشوية - 1/2 كيلو كفتة - 1/2 كيلو طرب - 1 كيلو ممبار - أرز (السعر غير مدرج)"),
   ]),
 
   // Appetizers
@@ -212,9 +238,9 @@ const allCategories = [
 
   // Tagine
   toCategory(nextId(), "Tagine", "طواجن", [
-    item(nextId(), "Okra With Meat", "طاجن بامية باللحمة", "250"),
+    item(nextId(), "Bamia With Meat", "طاجن بامية باللحمة", "250"),
     item(nextId(), "Moussaka With Meat", "طاجن مسقعة باللحم المفروم", "175"),
-    item(nextId(), "Moussaka", "طاجن مسقعة سادة", "100", "Plain"),
+    item(nextId(), "Moussaka", "طاجن مسقعة سادة", "100",),
     item(nextId(), "Turli With Meat", "طاجن تورلي باللحم", "250"),
   ]),
 
@@ -223,7 +249,7 @@ const allCategories = [
     item(nextId(), "Vegetable Soup", "شوربة خضار", "50"),
     item(nextId(), "Orzo Soup", "شوربة لسان عصفور", "50"),
     item(nextId(), "Cream Of Chicken Soup", "شوربة كريمة بالفراخ", "120"),
-    item(nextId(), "Lentils", "شوربة عدس", "50"),
+    item(nextId(), "Lentil Soup", "شوربة عدس", "50"),
     item(nextId(), "Cream Of Mushroom Soup", "شوربة كريمة بالمشروم والفراخ", "150", "With Chicken"),
   ]),
 
